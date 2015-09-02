@@ -1,3 +1,4 @@
+//http://www.sitepoint.com/accessing-the-file-system-in-node-js/
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -35,7 +36,10 @@ fs.exists(fileName, function(exists) {
   }
 });
 
-
+fs.readFile("test1.txt", "utf8", function(error, data) {
+  	console.log("reading file...");
+	console.log(data);
+});
 
 
 // view engine setup

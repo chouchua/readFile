@@ -1,0 +1,1 @@
+A single function call can achieve reading a file. This file is read with fs.readFile(...), which can be both synchronous and asynchronous function.
