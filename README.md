@@ -1,6 +1,8 @@
 # readFile
 
 Read file asynchronously or synchronously.
+The following link is the documentation for functions used.
+- https://nodejs.org/api/fs.html#fs_fs_readfile_filename_options_callback
 
 Steps:
 - git clone this repo

@@ -11,6 +11,8 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+//******************************************************************
 //fs is built-in to node.
 //if exists such file, then undergo reading.
 //.stat method determines lenght of file in bytes.
@@ -40,6 +42,7 @@ fs.readFile("test1.txt", "utf8", function(error, data) {
   	console.log("reading file...");
 	console.log(data);
 });
+//********************************************************************
 
 
 // view engine setup
