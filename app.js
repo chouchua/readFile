@@ -10,6 +10,34 @@ var users = require('./routes/users');
 
 var app = express();
 
+//fs is built-in to node.
+//if exists such file, then undergo reading.
+//.stat method determines lenght of file in bytes.
+//.open callback provides file descriptor
+//the buffer holds file content of size stat.size
+var fs = require("fs");
+var fileName = "test.txt";
+
+fs.exists(fileName, function(exists) {
+  if (exists) {
+    fs.stat(fileName, function(error, stats) {
+      fs.open(fileName, "r", function(error, fd) {
+        var buffer = new Buffer(stats.size);
+
+        fs.read(fd, buffer, 0, buffer.length, null, function(error, bytesRead, buffer) {
+          var data = buffer.toString("utf8", 0, buffer.length);
+
+          console.log(data);
+          fs.close(fd);
+        });
+      });
+    });
+  }
+});
+
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

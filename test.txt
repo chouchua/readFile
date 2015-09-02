@@ -1,0 +1,2 @@
+This is a file to be read. If you see this text, it means that file is correctly read.
+Note that this is an asynchronous implementation.
